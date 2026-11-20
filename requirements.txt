@@ -1,8 +1,9 @@
 cmake
 streamlit
 opencv-python
-face-recognition
-numpy
+numpy<2
+dlib==19.24.99
+face-recognition==1.3.0
 ultralytics
 pyttsx3
 Pillow
