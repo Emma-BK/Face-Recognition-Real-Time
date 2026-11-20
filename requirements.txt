@@ -1,3 +1,4 @@
+setuptools<81
 streamlit
 numpy<2
 dlib @ https://raw.githubusercontent.com/Emma-BK/Face-Recognition-Real-Time/main/wheels/dlib-20.0.1.post1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl?v=2
