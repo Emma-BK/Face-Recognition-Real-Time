@@ -53,6 +53,21 @@ pip install -r requirements.txt
 > pip install -r requirements.txt
 > ```
 
+## 🌐 Déploiement
+
+L'application est déployée sur **Streamlit Community Cloud** :
+👉 **https://face-recognition-real-time-yckk2vtpmisp6dyvh4afjm.streamlit.app/**
+
+Configuration du déploiement :
+
+- **Version Python** : 3.12 (paramètres de l'app sur Streamlit Cloud)
+- **Fichier principal** : `app.py`
+- **Dépendances particulières** :
+  - `setuptools<81` (fournit `pkg_resources`, requis par `face_recognition_models`)
+  - `opencv-python-headless` (pas de `libGL` sur les serveurs cloud)
+  - wheels précompilés `dlib` et `ultralytics` hébergés dans `wheels/` (évitent la compilation de dlib et l'installation d'OpenCV avec interface graphique)
+- ⚠️ Les modes caméra utilisent `cv2.VideoCapture(0)` (caméra locale) : ils ne fonctionnent que si l'application tourne en local. Sur le cloud, utilisez les modes **Analyser Image**, **Recherche avec Image** et **Recherche dans Vidéo** avec des fichiers uploadés.
+
 ## 🚀 Utilisation
 
 1. Ajoutez des photos des personnes à reconnaître dans le dossier **`personnes_reference/`**.
