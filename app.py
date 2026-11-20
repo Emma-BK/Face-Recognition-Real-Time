@@ -10,7 +10,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 import cv2
 import numpy as np
 import face_recognition
-from ultralytics import YOLO
 from collections import defaultdict
 from datetime import datetime
 import time
@@ -462,6 +461,8 @@ def rechercher_personne_dans_video(image_uploaded, video_uploaded, nom_personne)
 # ===========================
 @st.cache_resource
 def load_yolo():
+    # Import paresseux : ultralytics/torch est lourd et ralentit le demarrage
+    from ultralytics import YOLO
     return YOLO("yolov8n.pt")
 
 def mode_camera_face_recognition():
