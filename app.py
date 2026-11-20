@@ -7,9 +7,12 @@ warnings.filterwarnings("ignore", category=UserWarning, module="face_recognition
 # Suppression également des autres warnings FutureWarning
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+print("DEBUG: debut imports", flush=True)
 import cv2
+print("DEBUG: cv2 ok", flush=True)
 import numpy as np
 import face_recognition
+print("DEBUG: face_recognition ok", flush=True)
 from collections import defaultdict
 from datetime import datetime
 import time
@@ -21,6 +24,7 @@ import tempfile
 # 🔊 MEMBRE 3 - ALERTES VOCALES (CORRIGÉ POUR STREAMLIT)
 # ===========================
 import pyttsx3
+print("DEBUG: pyttsx3 ok", flush=True)
 import threading
 
 def dire(message):
@@ -957,4 +961,6 @@ def main():
         mode_securite()
 
 if __name__ == "__main__":
+    print("DEBUG: avant main", flush=True)
     main()
+    print("DEBUG: apres main", flush=True)
